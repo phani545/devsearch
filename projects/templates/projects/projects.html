@@ -1,0 +1,36 @@
+{% extends 'main.html' %} {% block content %}
+
+<h2>{{message}}</h2>
+
+{% if num > 10%}
+<p>Number is grater than 10</p>
+{% elif num == 10 %}
+<p>Number is exactly 10</p>
+{% else %}
+<p>Number is less than 10</p>
+{% endif %}
+<hr />
+
+<h1>PROJECTS</h1>
+<ul>
+  {% for project in projects %}
+
+  <li>
+    Name:<a href="{% url 'project' project.id %}">{{project.title}}</a> ----
+    {{project.description}}
+  </li>
+
+  {% endfor %}
+</ul>
+<hr />
+<p>
+  Python is a language and is used for varied applications. Python is a language
+  where the code is arranged through whitespaces. If there is an incorrect
+  indentation, this will result in an error, and the python interpreter will
+  just return an error function. It uses the PEP8 whitespace ethics. There
+  should be 4 whitespaces used between any alternative or iteration. It happens
+  mainly because of the absence of tabs and whitespaces between the lines of
+  code. If there are any missing spaces between the code, you will face this
+  error as Python is a procedural language.
+</p>
+{%endblock content%}
